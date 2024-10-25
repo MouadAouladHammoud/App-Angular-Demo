@@ -1,3 +1,33 @@
 <h1>Hello World!</h1>
 
+<!--
+  "ngModelChange" est un événement spécifique d'Angular déclenché chaque fois que la valeur de "ngModel" change. 
+  Chaque fois que la valeur du champ change (par exemple, l'utilisateur tape une lettre), Angular déclenche l'événement "ngModelChange".
+  la variable $event représente effectivement la valeur saisie actuelle dans le champ de texte.
+
+  On peut personnaliser l'affichage des champs de saisie en utilisant un masque adapté aux besoins :
+    A pour une lettre ou un chiffre.
+    S pour une lettre.
+    0 pour un chiffre.
+  Exemple de masques courants :
+    Numéro de téléphone : mask="(000) 000-0000"
+    Date : mask="00/00/0000"
+    Code postal : mask="00000"
+  NB: ngx-mask est conçu pour fonctionner uniquement sur les champs de saisie comme <input> et <textarea>
+-->
+
+<div>
+  <label for="phoneInput">Numéro de téléphone : </label>
+  <input
+    id="phoneInput"
+    type="text"
+    [(ngModel)]="phoneNumber"
+    (ngModelChange)="onInputChange($event)"
+    mask="+(000) 000-0000 S A"
+  />
+</div>
+
+<p>Numéro de téléphone saisi : {{ phoneNumber }}</p>
+<p>Numéro de téléphone saisi : {{ phoneNumber2 }}</p>
+
 <router-outlet></router-outlet>
