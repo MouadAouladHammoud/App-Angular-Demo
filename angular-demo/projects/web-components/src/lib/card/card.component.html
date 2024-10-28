@@ -1,0 +1,28 @@
+<div class="card">
+  <p>card works!</p>
+  <img [src]="srcImg" alt="card image"/>
+  <div class="input-group">
+
+    <input 
+      type="text" 
+      [(ngModel)]="value"
+      (ngModelChange)="updateMessage()" 
+      mask="0000-0000" 
+      placeholder="Entrez votre numéro"
+      class="form-control"
+    />
+
+    <button
+      [disabled]="!value || value.length === 0"
+      (click)="saveAndEmit()"
+      class="btn"
+    >
+      {{ nameButton }}
+    </button>
+    
+  </div>
+  <p class="message">{{ cardService.message }}</p>
+</div>
+
+
+

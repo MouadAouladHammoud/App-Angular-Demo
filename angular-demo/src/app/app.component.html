@@ -1,3 +1,9 @@
 <h1>Hello World!</h1>
 
+<lib-card
+  [srcImg]="'https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png'"
+  [nameButton]="'Sauvegarder'"
+  (savedValue)="onSave($event)">
+</lib-card>
+
 <router-outlet></router-outlet>

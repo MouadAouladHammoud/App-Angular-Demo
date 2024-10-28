@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-demo';
+
+  onSave(numero: string) {
+    alert("Message du composant parent: " + numero )
+  }
 }
